@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="New Dashboard" />
+  <DataSources>
+    <SqlDataSource ComponentName="DataSource1">
+      <Name>Categories</Name>
+      <Connection Name="nwindConnection" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="Categories">
+        <Tables>
+          <Table Name="Categories" />
+        </Tables>
+        <Columns>
+          <Column Table="Categories" Name="CategoryID" />
+          <Column Table="Categories" Name="CategoryName" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+</Dashboard>

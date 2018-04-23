@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.vb" Inherits="MvcDashboard_CustomSchemaProvider.MvcApplication" Language="vb" %>
