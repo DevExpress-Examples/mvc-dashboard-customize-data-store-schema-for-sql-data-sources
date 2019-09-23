@@ -17,4 +17,5 @@
 
 <br/>
 
-
+**See Also:**<br/>
+[Query Builder - Limit the list of available Stored Procedures, Tables, or Views](https://www.devexpress.com/Support/Center/Question/Details/T622683/)
