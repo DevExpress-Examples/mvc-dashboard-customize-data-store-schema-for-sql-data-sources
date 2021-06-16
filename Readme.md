@@ -10,12 +10,15 @@
 <!-- default file list end -->
 # ASP.NET MVC Dashboard - How to customize a data store schema for SQL data sources
 
+This example demonstrates how to customize a data store schema for a dashboard data source that uses a connection to the Northwind database.
 
-<p>This example demonstrates how to customize a data store schema for a dashboard data source that uses a connection to the Northwind database.</p>
-<p>In this example, the <a href="https://documentation.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx.class">IDBSchemaProviderEx</a> interface is implemented by a class that defines a custom data store schema containing two related tables.  </p>
-<p>To see the result, add a new query or edit the existing query.</p>
+In this example, the [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx) interface is implemented by a class that defines a custom data store schema containing two related tables.
 
-<br/>
+To see the result, add a new query or edit the existing query.
 
-**See Also:**<br/>
-[Query Builder - Limit the list of available Stored Procedures, Tables, or Views](https://www.devexpress.com/Support/Center/Question/Details/T622683/)
+## API
+
+- [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx)
+
+## See Also
+- [Query Builder - Limit the list of available Stored Procedures, Tables, or Views](https://www.devexpress.com/Support/Center/Question/Details/T622683/)
