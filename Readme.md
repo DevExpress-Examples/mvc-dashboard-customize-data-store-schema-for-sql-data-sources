@@ -8,7 +8,7 @@
 * [Global.asax.cs](./CS/MvcDashboard_CustomSchemaProvider/Global.asax.cs) (VB: [Global.asax.vb](./VB/MvcDashboard_CustomSchemaProvider/Global.asax.vb))
 * [Index.cshtml](./CS/MvcDashboard_CustomSchemaProvider/Views/Home/Index.cshtml)
 <!-- default file list end -->
-# ASP.NET MVC Dashboard - How to customize a data store schema for SQL data sources
+# Dashboard for MVC - How to customize a data store schema for SQL data sources
 
 This example demonstrates how to customize a data store schema for a dashboard data source that uses a connection to the Northwind database.
 
@@ -16,9 +16,9 @@ In this example, the [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibr
 
 To see the result, add a new query or edit the existing query.
 
-## API
+## Documentation
 
 - [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx)
 
-## See Also
+## More Examples
 - [Query Builder - Limit the list of available Stored Procedures, Tables, or Views](https://www.devexpress.com/Support/Center/Question/Details/T622683/)
