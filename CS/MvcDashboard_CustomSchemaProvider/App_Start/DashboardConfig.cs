@@ -8,7 +8,7 @@ using System.Web.Routing;
 namespace MvcDashboard_CustomSchemaProvider {
     public static class DashboardConfig {
         public static void RegisterService(RouteCollection routes) {
-            routes.MapDashboardRoute("dashboardControl");
+            routes.MapDashboardRoute("dashboardControl","DefaultDashboard");
 
             DashboardFileStorage dashboardFileStorage = new DashboardFileStorage("~/App_Data/Dashboards");
             DashboardConfigurator.Default.SetDashboardStorage(dashboardFileStorage);  
@@ -24,15 +24,15 @@ namespace MvcDashboard_CustomSchemaProvider {
         public void LoadColumns(SqlDataConnection connection, params DBTable[] tables) {
             foreach (DBTable table in tables) {
                 if (table.Name == "Categories" && table.Columns.Count == 0) {
-                    DBColumn categoryIdColumn = new DBColumn { Name = "CategoryID" };
+                    DBColumn categoryIdColumn = new DBColumn { Name = "CategoryID", ColumnType = DBColumnType.Int32  };
                     table.AddColumn(categoryIdColumn);
-                    DBColumn categoryNameColumn = new DBColumn { Name = "CategoryName" };
+                    DBColumn categoryNameColumn = new DBColumn { Name = "CategoryName", ColumnType = DBColumnType.String };
                     table.AddColumn(categoryNameColumn);
                 }
                 if (table.Name == "Products" && table.Columns.Count == 0) {
-                    DBColumn categoryIdColumn = new DBColumn { Name = "CategoryID" };
+                    DBColumn categoryIdColumn = new DBColumn { Name = "CategoryID", ColumnType = DBColumnType.Int32 };
                     table.AddColumn(categoryIdColumn);
-                    DBColumn productNameColumn = new DBColumn { Name = "ProductName" };
+                    DBColumn productNameColumn = new DBColumn { Name = "ProductName", ColumnType = DBColumnType.String };
                     table.AddColumn(productNameColumn);
 
                     DBForeignKey foreignKey = new DBForeignKey(

@@ -12,7 +12,7 @@ Namespace MvcDashboard_CustomSchemaProvider
         End Sub
 
         Public Shared Sub RegisterService(ByVal routes As RouteCollection)
-            routes.MapDashboardRoute("dashboardControl")
+            routes.MapDashboardRoute("dashboardControl", "DefaultDashboard")
 
             Dim dashboardFileStorage As New DashboardFileStorage("~/App_Data/Dashboards")
             DashboardConfigurator.Default.SetDashboardStorage(dashboardFileStorage)
@@ -31,15 +31,15 @@ Namespace MvcDashboard_CustomSchemaProvider
             Implements IDBSchemaProviderEx.LoadColumns
             For Each table As DBTable In tables
                 If table.Name = "Categories" AndAlso table.Columns.Count = 0 Then
-                    Dim categoryIdColumn As DBColumn = New DBColumn With {.Name = "CategoryID"}
+                    Dim categoryIdColumn As DBColumn = New DBColumn With {.Name = "CategoryID", .ColumnType = DBColumnType.Int32}
                     table.AddColumn(categoryIdColumn)
-                    Dim categoryNameColumn As DBColumn = New DBColumn With {.Name = "CategoryName"}
+                    Dim categoryNameColumn As DBColumn = New DBColumn With {.Name = "CategoryName", .ColumnType = DBColumnType.String}
                     table.AddColumn(categoryNameColumn)
                 End If
                 If table.Name = "Products" AndAlso table.Columns.Count = 0 Then
-                    Dim categoryIdColumn As DBColumn = New DBColumn With {.Name = "CategoryID"}
+                    Dim categoryIdColumn As DBColumn = New DBColumn With {.Name = "CategoryID", .ColumnType = DBColumnType.Int32}
                     table.AddColumn(categoryIdColumn)
-                    Dim productNameColumn As DBColumn = New DBColumn With {.Name = "ProductName"}
+                    Dim productNameColumn As DBColumn = New DBColumn With {.Name = "ProductName", .ColumnType = DBColumnType.String}
                     table.AddColumn(productNameColumn)
 
                     Dim foreignKey As New DBForeignKey({categoryIdColumn}, "Categories", CustomDBSchemaProvider.CreatePrimaryKeys("CategoryID"))
