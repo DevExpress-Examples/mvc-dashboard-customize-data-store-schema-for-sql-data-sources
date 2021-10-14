@@ -3,8 +3,13 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T584271)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
+
+# Dashboard for MVC - How to customize a data store schema for SQL data sources
+
+This example demonstrates how to customize a data store schema for a dashboard data source that uses a connection to the Northwind database.
+
 <!-- default file list -->
-*Files to look at*:
+## Files to Look At
 
 * [DashboardConfig.cs](./CS/MvcDashboard_CustomSchemaProvider/App_Start/DashboardConfig.cs) (VB: [DashboardConfig.vb](./VB/MvcDashboard_CustomSchemaProvider/App_Start/DashboardConfig.vb))
 * [FilterConfig.cs](./CS/MvcDashboard_CustomSchemaProvider/App_Start/FilterConfig.cs) (VB: [FilterConfig.vb](./VB/MvcDashboard_CustomSchemaProvider/App_Start/FilterConfig.vb))
@@ -13,9 +18,6 @@
 * [Global.asax.cs](./CS/MvcDashboard_CustomSchemaProvider/Global.asax.cs) (VB: [Global.asax.vb](./VB/MvcDashboard_CustomSchemaProvider/Global.asax.vb))
 * [Index.cshtml](./CS/MvcDashboard_CustomSchemaProvider/Views/Home/Index.cshtml)
 <!-- default file list end -->
-# Dashboard for MVC - How to customize a data store schema for SQL data sources
-
-This example demonstrates how to customize a data store schema for a dashboard data source that uses a connection to the Northwind database.
 
 In this example, the [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx) interface is implemented by a class that defines a custom data store schema containing two related tables.
 
