@@ -38,7 +38,7 @@ namespace MvcDashboard_CustomSchemaProvider.Code {
         }
 
         public DBTable[] GetTables(SqlDataConnection connection, params string[] tableList) {
-            // Loads only the Categories and Products tables for the NWindConnectionString connection.
+            // Loads only the Categories and Products tables for the nwindConnection connection.
             if (connection.Name == "nwindConnection") {
                 if (tables != null) {
                     return tables;
