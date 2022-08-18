@@ -4,28 +4,47 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# Dashboard for MVC - How to customize a data store schema for SQL data sources
+# Dashboard for MVC - How to customize a database schema for SQL data sources
 
-This example demonstrates how to customize a data store schema for a dashboard data source that uses a connection to the Northwind database.
-
-<!-- default file list -->
-## Files to Look At
-
-* [DashboardConfig.cs](./CS/MvcDashboard_CustomSchemaProvider/App_Start/DashboardConfig.cs) (VB: [DashboardConfig.vb](./VB/MvcDashboard_CustomSchemaProvider/App_Start/DashboardConfig.vb))
-* [FilterConfig.cs](./CS/MvcDashboard_CustomSchemaProvider/App_Start/FilterConfig.cs) (VB: [FilterConfig.vb](./VB/MvcDashboard_CustomSchemaProvider/App_Start/FilterConfig.vb))
-* [RouteConfig.cs](./CS/MvcDashboard_CustomSchemaProvider/App_Start/RouteConfig.cs) (VB: [RouteConfig.vb](./VB/MvcDashboard_CustomSchemaProvider/App_Start/RouteConfig.vb))
-* [HomeController.cs](./CS/MvcDashboard_CustomSchemaProvider/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/MvcDashboard_CustomSchemaProvider/Controllers/HomeController.vb))
-* [Global.asax.cs](./CS/MvcDashboard_CustomSchemaProvider/Global.asax.cs) (VB: [Global.asax.vb](./VB/MvcDashboard_CustomSchemaProvider/Global.asax.vb))
-* [Index.cshtml](./CS/MvcDashboard_CustomSchemaProvider/Views/Home/Index.cshtml)
-<!-- default file list end -->
-
-In this example, the [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx) interface is implemented by a class that defines a custom data store schema containing two related tables.
+This example shows how to create a custom database schema for the dashboard. The example contains two implementation of the [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx) interface, `LimitDBSchemaProvider` and `ManualDBSchemaProvider`. Call the [DashboardConfigurator.SetDBSchemaProvider](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.DashboardConfigurator.SetDBSchemaProvider(DevExpress.DataAccess.Sql.IDBSchemaProviderEx)) method to assign the database schema to the Web Dashboard.
 
 To see the result, add a new query or edit the existing query.
 
+### The LimitDBSchemaProvider class
+
+File: [LimitDBSchemaProvider.cs](./CS/MvcDashboard_CustomSchemaProvider/Code/LimitDBSchemaProvider.cs) (VB: [LimitDBSchemaProvider.vb](./VB/MvcDashboard_CustomSchemaProvider/Code/LimitDBSchemaProvider.vb))
+
+This provider displays only the following database entities:
+
+- Tables which names start with the letter *C*
+- Views which names start with *Sales*
+- Stored procedures with zero arguments
+
+![](images/custom_dbschema_views.png)
+
+### The ManualDBSchemaProvider class
+
+File: [ManualDBSchemaProvider.cs](./CS/MvcDashboard_CustomSchemaProvider/Code/ManualDBSchemaProvider.cs) (VB: [ManualDBSchemaProvider.vb](./VB/MvcDashboard_CustomSchemaProvider/Code/ManualDBSchemaProvider.vb))
+
+This provider loads two tables (`Categories` and `Products`) for the `nwindConnection` connection. Both tables contain only two columns and the tables are linked by the `CategoryID` field.
+
+![](images/custom_dbschema_tables.png)
+
+This technique improves the [Data Source Wizard](https://docs.devexpress.com/Dashboard/117680/) performance when loading the database schema to the dashboard.
+
+## Files to Look At
+
+* [LimitDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/LimitDBSchemaProvider.cs) (VB: [LimitDBSchemaProvider.vb](./VB/MvcDashboard_CustomSchemaProvider/Code/LimitDBSchemaProvider.vb))
+* [ManualDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/ManualDBSchemaProvider.cs) (VB: [ManualDBSchemaProvider.vb](./VB/MvcDashboard_CustomSchemaProvider/Code/ManualDBSchemaProvider.vb))
+* [DashboardConfig.cs](/CS/MvcDashboard_CustomSchemaProvider/App_Start/DashboardConfig.cs) (VB: [DashboardConfig.vb](./VB/MvcDashboard_CustomSchemaProvider/App_Start/DashboardConfig.vb))
+
 ## Documentation
 
-- [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx)
+* [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx)
 
 ## More Examples
-- [Query Builder - Limit the list of available Stored Procedures, Tables, or Views](https://www.devexpress.com/Support/Center/Question/Details/T622683/)
+
+* [Dashboard for ASP.NET Core - How to customize a database schema for SQL data sources](https://github.com/DevExpress-Examples/asp-net-core-dashboard-custom-database-schema-for-sql-data-sources)
+* [Dashboard for MVC - How to implement multi-tenant Dashboard architecture
+](https://github.com/DevExpress-Examples/DashboardUserBasedMVC)
+
