@@ -34,8 +34,8 @@ This technique improves the [Data Source Wizard](https://docs.devexpress.com/Das
 
 ## Files to Look At
 
-* [LimitDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/Code/LimitDBSchemaProvider.cs) (VB: [LimitDBSchemaProvider.vb](./VB/MvcDashboard_CustomSchemaProvider/Code/LimitDBSchemaProvider.vb))
-* [ManualDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/Code/ManualDBSchemaProvider.cs) (VB: [ManualDBSchemaProvider.vb](./VB/MvcDashboard_CustomSchemaProvider/Code/ManualDBSchemaProvider.vb))
+* [LimitDBSchemaProvider.cs](./CS/MvcDashboard_CustomSchemaProvider/Code/LimitDBSchemaProvider.cs) (VB: [LimitDBSchemaProvider.vb](./VB/MvcDashboard_CustomSchemaProvider/Code/LimitDBSchemaProvider.vb))
+* [ManualDBSchemaProvider.cs](./CS/MvcDashboard_CustomSchemaProvider/Code/ManualDBSchemaProvider.cs) (VB: [ManualDBSchemaProvider.vb](./VB/MvcDashboard_CustomSchemaProvider/Code/ManualDBSchemaProvider.vb))
 * [DashboardConfig.cs](/CS/MvcDashboard_CustomSchemaProvider/App_Start/DashboardConfig.cs) (VB: [DashboardConfig.vb](./VB/MvcDashboard_CustomSchemaProvider/App_Start/DashboardConfig.vb))
 
 ## Documentation
