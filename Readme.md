@@ -45,6 +45,6 @@ This technique improves the [Data Source Wizard](https://docs.devexpress.com/Das
 ## More Examples
 
 * [Dashboard for ASP.NET Core - How to customize a database schema for SQL data sources](https://github.com/DevExpress-Examples/asp-net-core-dashboard-custom-database-schema-for-sql-data-sources)
-* [Dashboard for MVC - How to implement multi-tenant Dashboard architecture
-](https://github.com/DevExpress-Examples/DashboardUserBasedMVC)
+* [Dashboard for ASP.NET Web Forms - How to customize a database schema for SQL data sources](https://github.com/DevExpress-Examples/web-forms-dashboard-custom-database-schema-for-sql-data-sources)
+* [Dashboard for MVC - How to implement multi-tenant Dashboard architecture](https://github.com/DevExpress-Examples/DashboardUserBasedMVC)
 
